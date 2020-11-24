@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "public/adminlte/sweetalert/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - public/adminlte/sweetalert",
+			"detail": "webpack -p"
+		}
+	]
+}

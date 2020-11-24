@@ -1,0 +1,23 @@
+input {
+    position: relative;
+    width: 100%; height: 20px;
+    color: white;
+}
+
+input:before {
+    position: absolute;
+    content: attr(data-date);
+    display: inline-block;
+}
+
+input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+    display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    color: black;
+    opacity: 1;
+}

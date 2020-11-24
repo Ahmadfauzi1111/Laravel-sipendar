@@ -1,0 +1,131 @@
+#include <iostream>
+#include <stdlib.h>
+#include <conio.h>
+#include <cstdio>
+#include <string.h>
+#define EMPTY_LIST NULL
+
+using namespace std;
+
+typedef struct tnode *address;
+
+struct tnode {
+    char nama[30];
+    char ttl[15];
+    char alamat[50];
+    int usia;
+    char keluhan[60];
+    address next;
+}node;
+address first, last, current;
+int x=1;
+
+void insertlast (address p) {
+    if(first == NULL){
+        first = p;
+    }
+    else{
+
+            address x=first;
+            while (x->next!=NULL) {
+                x=x->next;
+            }
+            x->next=p;
+            last=p;
+    }
+}
+
+void dequeue (address p) {
+    address temp=first;
+    if (temp==NULL){
+        cout<<"Antrian Kosong\n";
+    }else{
+
+            cout<<"Antrian ke- "<< x <<" silahkan masuk ke ruang dokter\n";
+            x++;
+            first=first->next;
+            free(temp);
+
+    }
+
+}
+void cetak (address p) {
+    if(p==NULL){
+        cout<<"Data Kosong\n";
+    }
+    else{
+        cout<<"Data antrian seluruh pasien : \n";
+        cout<<"***************************************************************************************************\n";
+        cout<<"Nama\t\tTTL\t\t\tAlamat\t\t\tUmur\t\tKeluhan\n";
+        cout<<"***************************************************************************************************\n";
+        do{
+                cout<< p->nama<<"\t\t"<<p->ttl<<"\t\t"<<p->alamat<<"\t\t"<<p->usia<<"\t\t"<<p->keluhan<<endl;
+                p=p->next;
+        }while (p != NULL);
+    }
+}
+int main()
+{
+    //first = last = NULL;
+    first=NULL;
+    Menu:
+
+
+        system("cls");
+        int pilih;
+        cout << "               PUSKESMAS              \n" << endl;
+        cout << "Menu : " << endl;
+        cout << "====" << endl;
+        cout << "    --------------------------------" << endl;
+        cout << "   | 1. Daftar & Ambil antrian      |" << endl;
+        cout << "   | 2. Data Antrian                |" << endl;
+        cout << "   | 3. Panggil Antrian             |" << endl;
+        cout << "   | 4. Keluar                      |" << endl;
+        cout << "    --------------------------------" << endl << endl;
+        cout << "Daftar Antrian Puskesmas" << endl;
+        cout << "Pilih dan masukan Angka Menu : "; cin >> pilih; cout << endl;
+
+  switch (pilih) {
+    case 1:
+        system("cls");
+        current = (address)malloc(sizeof(node));
+
+        cout << " Menu Antrian Puskesmas" << endl;
+        cout << "\n" << endl << endl; fflush(stdin);
+        cout << "Silahkan masukkan Nama Anda           :    "; gets(current->nama); fflush(stdin);
+        cout << "Silahkan masukkan Tanggal Lahir Anda  :    "; gets(current->ttl); fflush(stdin);
+        cout << "Silahkan masukkan Alamat Anda(Kota)   :    "; gets(current->alamat); fflush(stdin);
+        cout << "Silahkan masukkan Umur Anda           :    "; cin>>current->usia; fflush(stdin);
+        cout << "Silahkan masukkan keluhan Anda        :    "; gets(current->keluhan); fflush(stdin);
+        insertlast(current);
+        goto Menu;
+        break;
+    case 2:
+        system("cls");
+        cetak(first);
+        getch();
+        goto Menu;
+    case 3:
+        system("cls");
+            dequeue(current);
+        getch();
+        goto Menu;
+        break;
+    case 4:
+        char pilih1;
+        system("cls");
+        cout << "Anda ingin keluar program?" << endl;
+        cout << "Tekan [Y] untuk keluar, Tekan [N] untuk kembali ke Menu" << endl; cin>> pilih1;
+        if (pilih1=='Y'||pilih1=='y')
+            exit(0);
+        else if (pilih1=='N'||pilih1=='n')
+            goto Menu;
+        else
+            cout << "\nPilihan tidak tersedia" << endl;
+        break;
+         default:
+        cout << "Pilihan tidak tersedia";
+    getch();
+    return 0;
+    }
+}
