@@ -41,7 +41,7 @@ Admin -> Username : admin
 9. Buka Codingan menggunakan Visual Studio Code
 10. Buka terminal di Visual Studio Code ketikan : Composer Install
 11. Selanjutnya buat database di Mysql dan samakan namanya dengan format yang ada di Env
-12. Buka terminal lagi ketikan : php artisan migrate:fresh --seed
+12. Buka terminal lagi ketikan : php artisan migrate --seed
 13. Selanjutnya Ketikan : php artisan serve
 ENJOY SiStem
 
