@@ -1,12 +1,19 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## Tentang Sistem Informasi Pendadaran
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Sebuah Sistem yang digunakan untuk mengelola pendadaran atau biasa disebut sidang akhir, Sistem ini menggunakan Framework Laravel versi 6
 
-## Tentang Laravel
+## Fitur
 
-Laravel adalah framework aplikasi web dengan sintaks yang ekspresif dan elegan. Kami percaya pengembangan harus menjadi pengalaman yang menyenangkan dan kreatif agar benar-benar memuaskan. Laravel menghilangkan kesulitan dalam pengembangan dengan memudahkan tugas-tugas umum yang digunakan di banyak proyek web
+- Admin dapat mengolah akun pengguna yaitu Komisi, Mahasiswa, Dosen dan Admin
+- Mahasiswa dapat mendaftar pendadaran
+- Komisi dan Admin dapat memverifikasi data pendaftaran mahasiswa
+- Komisi dapat mengolah jadwal
+- Mahasiswa dan Dosen dapat mengetahui Jadwal yang telah dibuatkan Komisi
+- 4 Dosen dapat menginputkan Nilai Pendadaran
+- Komisi dapat mengkonfirmasi Nilai yang telah diinputkan Dosen
+- Mahasiswa dapat melihat Nilainya jika nilai kurang dari 60 maka ada button daftar ulang'
+
+## Screenshot Sistem
+![Data Admin](https://user-images.githubusercontent.com/74946394/100169460-2440ef80-2ef6-11eb-8849-49719b440e64.PNG)
+
+
